@@ -7,6 +7,6 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("iot/", include('iot.urls')),
-    path("", RedirectView.as_view(url="/iot/", permanent=True)),
+    path("", RedirectView.as_view(url="/iot/sec_file/", permanent=True)),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
