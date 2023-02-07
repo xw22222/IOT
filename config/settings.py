@@ -141,4 +141,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# ubuntu 스태틱 경로 수동 지정 
+STATIC_ROOT = './srv/IOT/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
