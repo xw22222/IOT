@@ -40,10 +40,6 @@ click
 cloudpickle 
 colorama
 colorcet 
-conda-pack 
-conda-package-handling 
-conda-repo-cli 
-conda-token 
 cookiecutter 
 cryptography 
 cssselect
@@ -156,10 +152,8 @@ numexpr
 numpy 
 numpydoc 
 olefile 
-opencv-python==4.6.0.66
 openpyxl 
 packaging 
-paho-mqtt==1.6.1
 pandas 
 pandocfilters 
 panel 
@@ -168,9 +162,6 @@ paramiko
 parsel 
 parso 
 partd 
-pathspec==0.7.0
-patsy==0.5.2
-pep8==1.7.1
 pexpect 
 pickleshare 
 Pillow==9.0.1
