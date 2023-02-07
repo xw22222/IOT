@@ -26,7 +26,8 @@ SECRET_KEY = "django-insecure-!9a*l0ii%iwe0&v%!m&4o^-r!nnw6no(sqlr+$0j@(w!!*wa=q
 DEBUG = True
 
 ALLOWED_HOSTS = ['ec2-35-181-132-225.eu-west-3.compute.amazonaws.com', '35.181.132.225']
-#ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
+#ALLOWED_HOSTS = ['192.168.35.112', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -38,7 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'iot'
+    'iot',
+    'tayo',
+    'common.apps.CommonConfig',
 ]
 
 MIDDLEWARE = [
@@ -79,8 +82,15 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "tayo",
+        "USER" : "admin",
+        "PASSWORD" : "20220829",
+        "HOST" : "pjt1-mysql.chr1ojp8pl0h.eu-west-3.rds.amazonaws.com",
+        "PORT" : "3306",
+        "OPTIONS" : {
+            'init_command' : 'SET sql_mode="STRICT_TRANS_TABLES"'
+        }
     }
 }
 
@@ -97,6 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
 ]
 
+# 커스텀 유저 모델 등록
+AUTH_USER_MODEL = 'common.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -113,8 +125,8 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
-STATIC_ROOT = Path.joinpath(BASE_DIR, 'static')
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [BASE_DIR/'static']
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')
@@ -123,3 +135,7 @@ MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# 로그인/로그아웃 성공 후 이동하는 URL
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

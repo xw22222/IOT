@@ -1,10 +1,25 @@
-<h1>이미지 파일 수신 현황</h1><hr>
+{% extends 'base.html' %}
+{% load static %}
 
-<ul>
-    {% for sec_file in sec_files %}
-        <li>
-            <a href="{% url 'iot:detail' sec_file.id %}">{{ sec_file.file_name }}</a>
-        </li>
-    {% endfor %}
-</ul>
+{% block content %}
+<div style="padding:3vh;"></div>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="card align-middle" style="width:100rem; border-radius:20px; border-color:brown;">
+                <div class="card-title" style="margin-top:30px;">    
+                    <h2 class="card-title text-center">수신된 이미지</h2>
+                </div>
+                <div class="card-body text-center">
+                    {% for sec_file in sec_files %}
+                        <table>
+                            <tr><a href="{% url 'iot:detail' sec_file.id %}">{{ sec_file.file_name }}</a></tr>
+                        </table>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+
+{% endblock %}
