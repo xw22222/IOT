@@ -86,9 +86,6 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "tayo",
         "USER" : "admin",
-        "PASSWORD" : "20220829",
-        "HOST" : "pjt1-mysql.chr1ojp8pl0h.eu-west-3.rds.amazonaws.com",
-        "PORT" : "3306",
         "OPTIONS" : {
             'init_command' : 'SET sql_mode="STRICT_TRANS_TABLES"'
         }
@@ -141,6 +138,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-# ubuntu 스태틱 경로 수동 지정 
-STATIC_ROOT = [BASE_DIR/'static']
+# ubuntu 스태틱 경로 수동 지정 ?? 이미있어서
+#STATIC_ROOT = [BASE_DIR/'static']
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
