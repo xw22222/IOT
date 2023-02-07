@@ -313,8 +313,6 @@ ujson
 Unidecode 
 urllib3 
 w3lib 
-watchdog 
-wcwidth k
 webencodings==0.5.1
 websocket-client 
 Werkzeug 
@@ -323,7 +321,7 @@ win-inet-pton
 win-unicode-console==0.5
 wincertstore==0.2
 wrapt 
-xarray k
+xarray 
 xlrd 
 XlsxWriter 
 xlwings==0.24.9
