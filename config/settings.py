@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,8 +26,6 @@ SECRET_KEY = "django-insecure-!9a*l0ii%iwe0&v%!m&4o^-r!nnw6no(sqlr+$0j@(w!!*wa=q
 DEBUG = True
 
 ALLOWED_HOSTS = ['ec2-35-181-132-225.eu-west-3.compute.amazonaws.com', '35.181.132.225']
-
-#ALLOWED_HOSTS = ['192.168.35.112', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -86,6 +83,9 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "tayo",
         "USER" : "admin",
+        "PASSWORD" : "20220829",
+        "HOST" : "pjt1-mysql.chr1ojp8pl0h.eu-west-3.rds.amazonaws.com",
+        "PORT" : "3306",
         "OPTIONS" : {
             'init_command' : 'SET sql_mode="STRICT_TRANS_TABLES"'
         }
@@ -137,7 +137,3 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # 로그인/로그아웃 성공 후 이동하는 URL
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-
-# ubuntu 스태틱 경로 수동 지정 ?? 이미있어서
-#STATIC_ROOT = [BASE_DIR/'static']
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
